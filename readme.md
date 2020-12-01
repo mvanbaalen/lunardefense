@@ -1,0 +1,1 @@
+This is a game created for the GitHub Game Off 2020 game jam.

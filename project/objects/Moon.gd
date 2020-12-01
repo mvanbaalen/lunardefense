@@ -1,0 +1,21 @@
+extends Area2D
+
+signal stability_changed(new_value)
+
+var stability = 100
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Moon_area_entered(area):
+	if area.is_in_group("obstacle"):
+		stability -= area.damage
+		emit_signal("stability_changed", stability)
